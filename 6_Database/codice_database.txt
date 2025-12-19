@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS db_cam;
+USE db_cam;
+
+
+CREATE TABLE utenti (
+    id INT(11) NOT NULL AUTO_INCREMENT,        
+    username VARCHAR(50) NOT NULL,              
+    password VARCHAR(255) NOT NULL,            
+    dataNascita DATE NOT NULL,                  
+    ruolo VARCHAR(20) DEFAULT 'giocatore',     
+    parole_indovinate TEXT,                    
+    partite_giocate INT(11) DEFAULT 0,          
+    lingua VARCHAR(5) DEFAULT 'it',             
+
+    PRIMARY KEY (id),                          
+    UNIQUE (username)                           
+);
